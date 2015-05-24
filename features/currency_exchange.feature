@@ -1,5 +1,4 @@
 Feature: Currency Exchange
-
   Scenario: simple currency exchange
     Given the exchange rate for 1 USD is 0.91 EUR
     When I run "currencyfx 100 --from USD --to EUR"
