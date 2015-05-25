@@ -4,7 +4,7 @@ Feature: Currency Exchange
     When I run "currencyfx 100 --from USD --to EUR"
     Then I should see
      """
-     100 USD => 91 EUR
+     100 USD => 91.00 EUR
      """
 
   Scenario: reverse currency exchange
