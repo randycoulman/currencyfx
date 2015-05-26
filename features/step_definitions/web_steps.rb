@@ -10,6 +10,10 @@ Given(/^I select "([^"]*)" from "([^"]*)"$/) do |choice, list|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
+Given(/^I click the "([^"]*)" link$/) do |link|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 When(/^I press "([^"]*)"$/) do |button|
   pending # Write code here that turns the phrase above into concrete actions
 end
