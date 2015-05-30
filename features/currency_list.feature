@@ -14,4 +14,3 @@ Feature: Currency List
       | CAD    | Canadian Dollars |
       | EUR    | European Union Euros |
       | USD    | United States Dollars |
-

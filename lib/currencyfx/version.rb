@@ -1,0 +1,3 @@
+module Currencyfx
+  VERSION = "0.0.1"
+end
