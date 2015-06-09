@@ -1,3 +1,7 @@
 #!/usr/bin/env ruby
 
-puts "Hello, world!"
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), *%w(.. lib)))
+
+require "currencyfx"
+
+Currencyfx::CLI.run
