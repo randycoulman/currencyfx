@@ -1,3 +1,6 @@
+require_relative "exchange"
+require_relative "list_formatter"
+
 require "optparse"
 require "ostruct"
 
