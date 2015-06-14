@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "httparty", "~> 0.13.5"
+gem "terminal-table", "~> 1.4"
 
 group :development, :test do
   gem "rake", "~> 10.4"
