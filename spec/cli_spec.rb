@@ -68,12 +68,12 @@ module Currencyfx
       let(:arguments) { [100, "USD", "EUR", "--list"] }
 
       it "displays the currency list" do
-        run_cli
+        suppress_output { run_cli }
         expect(exchange).to have_received(:currency_list)
       end
 
       it "ignores the conversion request" do
-        run_cli
+        suppress_output { run_cli }
         expect(exchange).not_to have_received(:convert)
       end
     end
