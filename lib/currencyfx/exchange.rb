@@ -1,4 +1,5 @@
 require_relative "api"
+require_relative "currency"
 
 module Currencyfx
   class Exchange
@@ -13,7 +14,9 @@ module Currencyfx
     end
 
     def currency_list
-      fail "Test-drive this!"
+      api.currency_list.each_with_object([]) do |(code, description), memo|
+        memo << Currency.new(code, description)
+      end.sort
     end
 
     private
