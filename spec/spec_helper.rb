@@ -90,4 +90,6 @@ begin
 end
 end
 
+require_relative "support/vcr"
+
 require "currencyfx"
