@@ -1,0 +1,148 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://openexchangerates.org/api/currencies.json?app_id=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 14 Jun 2015 06:23:51 GMT
+      Server:
+      - Apache
+      Last-Modified:
+      - Mon, 23 Feb 2015 20:32:10 GMT
+      Cache-Control:
+      - public
+      Etag:
+      - '"cd6018d6518d72395c4b0b88edd056ee"'
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '4653'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewoJIkFFRCI6ICJVbml0ZWQgQXJhYiBFbWlyYXRlcyBEaXJoYW0iLAoJIkFG
+        TiI6ICJBZmdoYW4gQWZnaGFuaSIsCgkiQUxMIjogIkFsYmFuaWFuIExlayIs
+        CgkiQU1EIjogIkFybWVuaWFuIERyYW0iLAoJIkFORyI6ICJOZXRoZXJsYW5k
+        cyBBbnRpbGxlYW4gR3VpbGRlciIsCgkiQU9BIjogIkFuZ29sYW4gS3dhbnph
+        IiwKCSJBUlMiOiAiQXJnZW50aW5lIFBlc28iLAoJIkFVRCI6ICJBdXN0cmFs
+        aWFuIERvbGxhciIsCgkiQVdHIjogIkFydWJhbiBGbG9yaW4iLCAKCSJBWk4i
+        OiAiQXplcmJhaWphbmkgTWFuYXQiLAoJIkJBTSI6ICJCb3NuaWEtSGVyemVn
+        b3ZpbmEgQ29udmVydGlibGUgTWFyayIsCgkiQkJEIjogIkJhcmJhZGlhbiBE
+        b2xsYXIiLAoJIkJEVCI6ICJCYW5nbGFkZXNoaSBUYWthIiwKCSJCR04iOiAi
+        QnVsZ2FyaWFuIExldiIsCgkiQkhEIjogIkJhaHJhaW5pIERpbmFyIiwKCSJC
+        SUYiOiAiQnVydW5kaWFuIEZyYW5jIiwKCSJCTUQiOiAiQmVybXVkYW4gRG9s
+        bGFyIiwKCSJCTkQiOiAiQnJ1bmVpIERvbGxhciIsCgkiQk9CIjogIkJvbGl2
+        aWFuIEJvbGl2aWFubyIsCgkiQlJMIjogIkJyYXppbGlhbiBSZWFsIiwKCSJC
+        U0QiOiAiQmFoYW1pYW4gRG9sbGFyIiwKCSJCVEMiOiAiQml0Y29pbiIsCgki
+        QlROIjogIkJodXRhbmVzZSBOZ3VsdHJ1bSIsCgkiQldQIjogIkJvdHN3YW5h
+        biBQdWxhIiwKCSJCWVIiOiAiQmVsYXJ1c2lhbiBSdWJsZSIsCgkiQlpEIjog
+        IkJlbGl6ZSBEb2xsYXIiLAoJIkNBRCI6ICJDYW5hZGlhbiBEb2xsYXIiLAoJ
+        IkNERiI6ICJDb25nb2xlc2UgRnJhbmMiLAoJIkNIRiI6ICJTd2lzcyBGcmFu
+        YyIsCgkiQ0xGIjogIkNoaWxlYW4gVW5pdCBvZiBBY2NvdW50IChVRikiLAoJ
+        IkNMUCI6ICJDaGlsZWFuIFBlc28iLAoJIkNOWSI6ICJDaGluZXNlIFl1YW4i
+        LAoJIkNPUCI6ICJDb2xvbWJpYW4gUGVzbyIsCgkiQ1JDIjogIkNvc3RhIFJp
+        Y2FuIENvbMOzbiIsCgkiQ1VDIjogIkN1YmFuIENvbnZlcnRpYmxlIFBlc28i
+        LAoJIkNVUCI6ICJDdWJhbiBQZXNvIiwKCSJDVkUiOiAiQ2FwZSBWZXJkZWFu
+        IEVzY3VkbyIsCgkiQ1pLIjogIkN6ZWNoIFJlcHVibGljIEtvcnVuYSIsCgki
+        REpGIjogIkRqaWJvdXRpYW4gRnJhbmMiLAoJIkRLSyI6ICJEYW5pc2ggS3Jv
+        bmUiLAoJIkRPUCI6ICJEb21pbmljYW4gUGVzbyIsCgkiRFpEIjogIkFsZ2Vy
+        aWFuIERpbmFyIiwKCSJFRUsiOiAiRXN0b25pYW4gS3Jvb24iLAoJIkVHUCI6
+        ICJFZ3lwdGlhbiBQb3VuZCIsCgkiRVJOIjogIkVyaXRyZWFuIE5ha2ZhIiwK
+        CSJFVEIiOiAiRXRoaW9waWFuIEJpcnIiLAoJIkVVUiI6ICJFdXJvIiwKCSJG
+        SkQiOiAiRmlqaWFuIERvbGxhciIsCgkiRktQIjogIkZhbGtsYW5kIElzbGFu
+        ZHMgUG91bmQiLAoJIkdCUCI6ICJCcml0aXNoIFBvdW5kIFN0ZXJsaW5nIiwK
+        CSJHRUwiOiAiR2VvcmdpYW4gTGFyaSIsCgkiR0dQIjogIkd1ZXJuc2V5IFBv
+        dW5kIiwKCSJHSFMiOiAiR2hhbmFpYW4gQ2VkaSIsCgkiR0lQIjogIkdpYnJh
+        bHRhciBQb3VuZCIsCgkiR01EIjogIkdhbWJpYW4gRGFsYXNpIiwKCSJHTkYi
+        OiAiR3VpbmVhbiBGcmFuYyIsCgkiR1RRIjogIkd1YXRlbWFsYW4gUXVldHph
+        bCIsCgkiR1lEIjogIkd1eWFuYWVzZSBEb2xsYXIiLAoJIkhLRCI6ICJIb25n
+        IEtvbmcgRG9sbGFyIiwKCSJITkwiOiAiSG9uZHVyYW4gTGVtcGlyYSIsCgki
+        SFJLIjogIkNyb2F0aWFuIEt1bmEiLAoJIkhURyI6ICJIYWl0aWFuIEdvdXJk
+        ZSIsCgkiSFVGIjogIkh1bmdhcmlhbiBGb3JpbnQiLAoJIklEUiI6ICJJbmRv
+        bmVzaWFuIFJ1cGlhaCIsCgkiSUxTIjogIklzcmFlbGkgTmV3IFNoZXFlbCIs
+        CgkiSU1QIjogIk1hbnggcG91bmQiLAoJIklOUiI6ICJJbmRpYW4gUnVwZWUi
+        LAoJIklRRCI6ICJJcmFxaSBEaW5hciIsCgkiSVJSIjogIklyYW5pYW4gUmlh
+        bCIsCgkiSVNLIjogIkljZWxhbmRpYyBLcsOzbmEiLAoJIkpFUCI6ICJKZXJz
+        ZXkgUG91bmQiLAoJIkpNRCI6ICJKYW1haWNhbiBEb2xsYXIiLAoJIkpPRCI6
+        ICJKb3JkYW5pYW4gRGluYXIiLAoJIkpQWSI6ICJKYXBhbmVzZSBZZW4iLAoJ
+        IktFUyI6ICJLZW55YW4gU2hpbGxpbmciLAoJIktHUyI6ICJLeXJneXN0YW5p
+        IFNvbSIsCgkiS0hSIjogIkNhbWJvZGlhbiBSaWVsIiwKCSJLTUYiOiAiQ29t
+        b3JpYW4gRnJhbmMiLAoJIktQVyI6ICJOb3J0aCBLb3JlYW4gV29uIiwKCSJL
+        UlciOiAiU291dGggS29yZWFuIFdvbiIsCgkiS1dEIjogIkt1d2FpdGkgRGlu
+        YXIiLAoJIktZRCI6ICJDYXltYW4gSXNsYW5kcyBEb2xsYXIiLAoJIktaVCI6
+        ICJLYXpha2hzdGFuaSBUZW5nZSIsCgkiTEFLIjogIkxhb3RpYW4gS2lwIiwK
+        CSJMQlAiOiAiTGViYW5lc2UgUG91bmQiLAoJIkxLUiI6ICJTcmkgTGFua2Fu
+        IFJ1cGVlIiwKCSJMUkQiOiAiTGliZXJpYW4gRG9sbGFyIiwKCSJMU0wiOiAi
+        TGVzb3RobyBMb3RpIiwKCSJMVEwiOiAiTGl0aHVhbmlhbiBMaXRhcyIsCgki
+        TFZMIjogIkxhdHZpYW4gTGF0cyIsCgkiTFlEIjogIkxpYnlhbiBEaW5hciIs
+        CgkiTUFEIjogIk1vcm9jY2FuIERpcmhhbSIsCgkiTURMIjogIk1vbGRvdmFu
+        IExldSIsCgkiTUdBIjogIk1hbGFnYXN5IEFyaWFyeSIsCgkiTUtEIjogIk1h
+        Y2Vkb25pYW4gRGVuYXIiLAoJIk1NSyI6ICJNeWFubWEgS3lhdCIsCgkiTU5U
+        IjogIk1vbmdvbGlhbiBUdWdyaWsiLAoJIk1PUCI6ICJNYWNhbmVzZSBQYXRh
+        Y2EiLAoJIk1STyI6ICJNYXVyaXRhbmlhbiBPdWd1aXlhIiwKCSJNVEwiOiAi
+        TWFsdGVzZSBMaXJhIiwKCSJNVVIiOiAiTWF1cml0aWFuIFJ1cGVlIiwKCSJN
+        VlIiOiAiTWFsZGl2aWFuIFJ1Zml5YWEiLAoJIk1XSyI6ICJNYWxhd2lhbiBL
+        d2FjaGEiLAoJIk1YTiI6ICJNZXhpY2FuIFBlc28iLAoJIk1ZUiI6ICJNYWxh
+        eXNpYW4gUmluZ2dpdCIsCgkiTVpOIjogIk1vemFtYmljYW4gTWV0aWNhbCIs
+        CgkiTkFEIjogIk5hbWliaWFuIERvbGxhciIsCgkiTkdOIjogIk5pZ2VyaWFu
+        IE5haXJhIiwKCSJOSU8iOiAiTmljYXJhZ3VhbiBDw7NyZG9iYSIsCgkiTk9L
+        IjogIk5vcndlZ2lhbiBLcm9uZSIsCgkiTlBSIjogIk5lcGFsZXNlIFJ1cGVl
+        IiwKCSJOWkQiOiAiTmV3IFplYWxhbmQgRG9sbGFyIiwKCSJPTVIiOiAiT21h
+        bmkgUmlhbCIsCgkiUEFCIjogIlBhbmFtYW5pYW4gQmFsYm9hIiwKCSJQRU4i
+        OiAiUGVydXZpYW4gTnVldm8gU29sIiwKCSJQR0siOiAiUGFwdWEgTmV3IEd1
+        aW5lYW4gS2luYSIsCgkiUEhQIjogIlBoaWxpcHBpbmUgUGVzbyIsCgkiUEtS
+        IjogIlBha2lzdGFuaSBSdXBlZSIsCgkiUExOIjogIlBvbGlzaCBabG90eSIs
+        CgkiUFlHIjogIlBhcmFndWF5YW4gR3VhcmFuaSIsCgkiUUFSIjogIlFhdGFy
+        aSBSaWFsIiwKCSJST04iOiAiUm9tYW5pYW4gTGV1IiwKCSJSU0QiOiAiU2Vy
+        YmlhbiBEaW5hciIsCgkiUlVCIjogIlJ1c3NpYW4gUnVibGUiLAoJIlJXRiI6
+        ICJSd2FuZGFuIEZyYW5jIiwKCSJTQVIiOiAiU2F1ZGkgUml5YWwiLAoJIlNC
+        RCI6ICJTb2xvbW9uIElzbGFuZHMgRG9sbGFyIiwKCSJTQ1IiOiAiU2V5Y2hl
+        bGxvaXMgUnVwZWUiLAoJIlNERyI6ICJTdWRhbmVzZSBQb3VuZCIsCgkiU0VL
+        IjogIlN3ZWRpc2ggS3JvbmEiLAoJIlNHRCI6ICJTaW5nYXBvcmUgRG9sbGFy
+        IiwKCSJTSFAiOiAiU2FpbnQgSGVsZW5hIFBvdW5kIiwKCSJTTEwiOiAiU2ll
+        cnJhIExlb25lYW4gTGVvbmUiLAoJIlNPUyI6ICJTb21hbGkgU2hpbGxpbmci
+        LAoJIlNSRCI6ICJTdXJpbmFtZXNlIERvbGxhciIsCgkiU1REIjogIlPDo28g
+        VG9tw6kgYW5kIFByw61uY2lwZSBEb2JyYSIsCgkiU1ZDIjogIlNhbHZhZG9y
+        YW4gQ29sw7NuIiwKCSJTWVAiOiAiU3lyaWFuIFBvdW5kIiwKCSJTWkwiOiAi
+        U3dhemkgTGlsYW5nZW5pIiwKCSJUSEIiOiAiVGhhaSBCYWh0IiwKCSJUSlMi
+        OiAiVGFqaWtpc3RhbmkgU29tb25pIiwKCSJUTVQiOiAiVHVya21lbmlzdGFu
+        aSBNYW5hdCIsCgkiVE5EIjogIlR1bmlzaWFuIERpbmFyIiwKCSJUT1AiOiAi
+        VG9uZ2FuIFBhyrthbmdhIiwKCSJUUlkiOiAiVHVya2lzaCBMaXJhIiwKCSJU
+        VEQiOiAiVHJpbmlkYWQgYW5kIFRvYmFnbyBEb2xsYXIiLAoJIlRXRCI6ICJO
+        ZXcgVGFpd2FuIERvbGxhciIsCgkiVFpTIjogIlRhbnphbmlhbiBTaGlsbGlu
+        ZyIsCgkiVUFIIjogIlVrcmFpbmlhbiBIcnl2bmlhIiwKCSJVR1giOiAiVWdh
+        bmRhbiBTaGlsbGluZyIsCgkiVVNEIjogIlVuaXRlZCBTdGF0ZXMgRG9sbGFy
+        IiwKCSJVWVUiOiAiVXJ1Z3VheWFuIFBlc28iLAoJIlVaUyI6ICJVemJla2lz
+        dGFuIFNvbSIsCgkiVkVGIjogIlZlbmV6dWVsYW4gQm9sw612YXIgRnVlcnRl
+        IiwKCSJWTkQiOiAiVmlldG5hbWVzZSBEb25nIiwKCSJWVVYiOiAiVmFudWF0
+        dSBWYXR1IiwKCSJXU1QiOiAiU2Ftb2FuIFRhbGEiLAoJIlhBRiI6ICJDRkEg
+        RnJhbmMgQkVBQyIsCgkiWEFHIjogIlNpbHZlciAodHJveSBvdW5jZSkiLAoJ
+        IlhBVSI6ICJHb2xkICh0cm95IG91bmNlKSIsCgkiWENEIjogIkVhc3QgQ2Fy
+        aWJiZWFuIERvbGxhciIsCgkiWERSIjogIlNwZWNpYWwgRHJhd2luZyBSaWdo
+        dHMiLAoJIlhPRiI6ICJDRkEgRnJhbmMgQkNFQU8iLAoJIlhQRiI6ICJDRlAg
+        RnJhbmMiLAoJIllFUiI6ICJZZW1lbmkgUmlhbCIsCgkiWkFSIjogIlNvdXRo
+        IEFmcmljYW4gUmFuZCIsCgkiWk1LIjogIlphbWJpYW4gS3dhY2hhIChwcmUt
+        MjAxMykiLAoJIlpNVyI6ICJaYW1iaWFuIEt3YWNoYSIsCgkiWldMIjogIlpp
+        bWJhYndlYW4gRG9sbGFyIgp9
+    http_version: 
+  recorded_at: Sun, 14 Jun 2015 06:23:51 GMT
+recorded_with: VCR 2.9.3

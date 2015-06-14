@@ -1,5 +1,6 @@
 require_relative "exchange"
 require_relative "list_formatter"
+require_relative "apis/open_exchange_rates"
 
 require "optparse"
 require "ostruct"
@@ -10,7 +11,7 @@ module Currencyfx
       self.new.run
     end
 
-    def initialize(exchange: Exchange.new, list_formatter: ListFormatter.new)
+    def initialize(exchange: Exchange.new(api: DEFAULT_API), list_formatter: ListFormatter.new)
       @options = Options.new
       @exchange = exchange
       @list_formatter = list_formatter
@@ -34,6 +35,8 @@ module Currencyfx
     end
 
     private
+
+    DEFAULT_API = Apis::OpenExchangeRates.new
 
     attr_reader :options, :exchange, :list_formatter
 

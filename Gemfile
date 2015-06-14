@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem "httparty", "~> 0.13.5"
+
 group :development, :test do
   gem "rake", "~> 10.4"
   gem "dotenv", "~> 2.0"
