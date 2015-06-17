@@ -3,7 +3,7 @@ module Currencyfx
     subject(:exchange) { described_class.new(api: api) }
     let(:api) { instance_double(API) }
 
-    describe "converting currency amounts" do  # MENTION WHY THIS ISN'T `describe "#convert"`
+    describe "converting currency amounts" do
       it "forwards conversion requests directly to the API" do
         expect(api).to receive(:convert).with(100, "USD", "EUR")
         exchange.convert(100, "USD", "EUR")
@@ -23,11 +23,12 @@ module Currencyfx
             EUR: "Euro"
         }
       end
-      let(:list) { exchange.currency_list }
 
       before do
         allow(api).to receive(:currency_list) { api_result }
       end
+
+      let(:currency_list) { exchange.currency_list }
 
       it "converts the returned Hash into an array of currencies" do
         expected = [
@@ -35,11 +36,11 @@ module Currencyfx
             Currency.new("CAD", "Canadian Dollar"),
             Currency.new("EUR", "Euro")
         ]
-        expect(list).to match_array(expected)
+        expect(currency_list).to match_array(expected)
       end
 
       it "sorts the array by currency code" do
-        expect(list.map(&:code)).to eq(%w[CAD EUR USD])
+        expect(currency_list.map(&:code)).to eq(%w[CAD EUR USD])
       end
     end
   end
