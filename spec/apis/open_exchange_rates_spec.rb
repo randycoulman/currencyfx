@@ -5,7 +5,7 @@ module Currencyfx
 
       describe "converting from one currency to another",
                vcr: {
-                   cassette_name: "rates",
+                   cassette_name: "open_exchange_rates/rates",
                    erb: { eur: 0.8, cad: 1.1 }
                } do
         it "performs a no-op conversion" do
@@ -25,7 +25,7 @@ module Currencyfx
         end
       end
 
-      describe "retrieving the currency list", vcr: { cassette_name: "currencies" } do
+      describe "retrieving the currency list", vcr: { cassette_name: "open_exchange_rates/currencies" } do
         it "returns a hash of currency codes and descriptions" do
           expect(api.currency_list).to include("USD" => "United States Dollar", "EUR" => "Euro")
         end
