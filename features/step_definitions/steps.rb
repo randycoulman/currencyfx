@@ -1,5 +1,9 @@
-Given(/^the exchange rate for ([\d.]+) ([A-Z]{3}) is ([\d.]+) ([A-Z]{3})$/) do |source_amount, source_currency, dest_amount, dest_currency|
-  #pending
+require_relative "../support/vcr"
+require "currencyfx"
+
+Given(/^the exchange rate for 1 USD is ([\d.]+) ([A-Z]{3})$/) do |dest_amount, dest_currency|
+  default_rates = { eur: 1.0, cad: 1.0 }
+  @cassette_options = { erb: default_rates.merge(dest_currency.downcase.to_sym => dest_amount) }
 end
 
 Given(/^the following currencies exist:?$/) do |table|
@@ -8,7 +12,9 @@ Given(/^the following currencies exist:?$/) do |table|
 end
 
 When(/^I convert ([\d.]+) from (\w{3}) to (\w{3})$/) do |amount, source, target|
-  @output = run_application(amount, source, target)
+  VCR.use_cassette("open_exchange_rates/rates", @cassette_options) do
+    @output = run_application(amount, source, target)
+  end
 end
 
 Then(/^I should get ([\d.]+) (\w{3})$/) do |amount, currency|
@@ -16,7 +22,8 @@ Then(/^I should get ([\d.]+) (\w{3})$/) do |amount, currency|
 end
 
 When(/^I ask for a currency list$/) do
-  @output = run_application("--list")
+  pending
+  # @output = run_application("--list")
 end
 
 Then(/^I should see currencies and descriptions in this order:$/) do |table|
@@ -25,5 +32,15 @@ Then(/^I should see currencies and descriptions in this order:$/) do |table|
 end
 
 def run_application(*args)
-  %x(bin/currencyfx #{args.join(" ")})
+  capture_output { Currencyfx::CLI.run(args) }
+  #%x(bin/currencyfx #{args.join(" ")})
+end
+
+def capture_output
+  original_stdout = $stdout
+  $stdout = StringIO.new
+  yield
+  $stdout.string
+ensure
+  $stdout = original_stdout
 end

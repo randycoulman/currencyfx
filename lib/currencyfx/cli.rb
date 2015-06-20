@@ -7,8 +7,8 @@ require "ostruct"
 
 module Currencyfx
   class CLI
-    def self.run
-      self.new.run
+    def self.run(args = ARGV)
+      self.new.run(args)
     end
 
     def initialize(exchange: Exchange.new(api: DEFAULT_API), list_formatter: ListFormatter.new)
@@ -50,8 +50,8 @@ module Currencyfx
     end
 
     def convert(amount, source_currency, target_currency)
-      converted = exchange.convert(amount, source_currency, target_currency).round(2)
-      puts "#{amount} #{source_currency} => #{converted} #{target_currency}"
+      converted = exchange.convert(Float(amount), source_currency, target_currency)
+      printf("%.2f %s => %.2f %s", amount, source_currency, converted, target_currency)
     end
 
     def option_parser
