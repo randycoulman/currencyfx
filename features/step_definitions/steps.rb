@@ -6,11 +6,6 @@ Given(/^the exchange rate for 1 USD is ([\d.]+) ([A-Z]{3})$/) do |dest_amount, d
   @cassette_options = { erb: default_rates.merge(dest_currency.downcase.to_sym => dest_amount) }
 end
 
-Given(/^the following currencies exist:?$/) do |table|
-  # table is a Cucumber::Core::Ast::DataTable
-  #pending # Write code here that turns the phrase above into concrete actions
-end
-
 When(/^I convert ([\d.]+) from (\w{3}) to (\w{3})$/) do |amount, source, target|
   VCR.use_cassette("open_exchange_rates/rates", @cassette_options) do
     @output = run_application(amount, source, target)
@@ -22,18 +17,18 @@ Then(/^I should get ([\d.]+) (\w{3})$/) do |amount, currency|
 end
 
 When(/^I ask for a currency list$/) do
-  pending
-  # @output = run_application("--list")
+  VCR.use_cassette("open_exchange_rates/currencies") do
+    @output = run_application("--list")
+  end
 end
 
 Then(/^I should see currencies and descriptions in this order:$/) do |table|
-  expected_output = table.raw[1..-1].map { |row| row.join("\\s+|\\s+") }.join("\\s+|\\n|\\s+")
-  expect(@output).to match /#{expected_output}/m
+  expected_output = table.raw[1..-1].map { |row| row.join("\\s+\\|\\s+") }.join("\\s+\\|.*\\|\\s+")
+  expect(@output).to match(/#{expected_output}/m)
 end
 
 def run_application(*args)
   capture_output { Currencyfx::CLI.run(args) }
-  #%x(bin/currencyfx #{args.join(" ")})
 end
 
 def capture_output
