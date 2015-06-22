@@ -6,6 +6,11 @@ Given(/^the exchange rate for 1 USD is ([\d.]+) ([A-Z]{3})$/) do |dest_amount, d
   @cassette_options = { erb: default_rates.merge(dest_currency.downcase.to_sym => dest_amount) }
 end
 
+Given(/^the following currencies exist:?$/) do |table|
+  currencies = table.raw[1..-1]
+  @cassette_options = { erb: { currencies: currencies } }
+end
+
 When(/^I convert ([\d.]+) from (\w{3}) to (\w{3})$/) do |amount, source, target|
   VCR.use_cassette("open_exchange_rates/rates", @cassette_options) do
     @output = run_application(amount, source, target)
@@ -17,7 +22,7 @@ Then(/^I should get ([\d.]+) (\w{3})$/) do |amount, currency|
 end
 
 When(/^I ask for a currency list$/) do
-  VCR.use_cassette("open_exchange_rates/currencies") do
+  VCR.use_cassette("open_exchange_rates/injected_currencies", @cassette_options) do
     @output = run_application("--list")
   end
 end
