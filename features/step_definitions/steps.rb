@@ -1,9 +1,7 @@
-require_relative "../support/vcr"
 require "currencyfx"
 
 Given(/^the exchange rate for 1 USD is ([\d.]+) ([A-Z]{3})$/) do |dest_amount, dest_currency|
-  default_rates = { eur: 1.0, cad: 1.0 }
-  @cassette_options = { erb: default_rates.merge(dest_currency.downcase.to_sym => dest_amount) }
+  @cassette_options = { erb: { dest_currency.downcase.to_sym => dest_amount } }
 end
 
 Given(/^the following currencies exist:?$/) do |table|
@@ -22,7 +20,7 @@ Then(/^I should get ([\d.]+) (\w{3})$/) do |amount, currency|
 end
 
 When(/^I ask for a currency list$/) do
-  VCR.use_cassette("open_exchange_rates/injected_currencies", @cassette_options) do
+  VCR.use_cassette("open_exchange_rates/currencies", @cassette_options) do
     @output = run_application("--list")
   end
 end
