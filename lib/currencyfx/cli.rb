@@ -51,7 +51,7 @@ module Currencyfx
 
     def convert(amount, source_currency, target_currency)
       converted = exchange.convert(Float(amount), source_currency, target_currency)
-      printf("%.2f %s => %.2f %s", amount, source_currency, converted, target_currency)
+      printf("%.2f %s => %.2f %s\n", amount, source_currency, converted, target_currency)
     end
 
     def option_parser
