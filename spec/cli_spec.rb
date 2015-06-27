@@ -37,27 +37,19 @@ module Currencyfx
     end
 
     context "when exchanging currency" do
-      let(:arguments) { [100, "USD", "EUR"] }
-      let(:rate) { 91.87 }
+      let(:arguments) { %w[100 USD EUR] }
+      let(:converted) { 91.87 }
 
       before do
-        allow(exchange).to receive(:convert).with(100, "USD", "EUR") { rate }
+        allow(exchange).to receive(:convert).with(100, "USD", "EUR") { converted }
       end
 
       it "displays the converted amount and currency" do
         expect { run_cli }.to output(/91.87 EUR/).to_stdout
       end
 
-      context "when incoming amount is a string" do
-        let(:arguments) { ["100", "USD", "EUR"] }
-
-        it "converts it to a number and performs the converstion" do
-          expect { run_cli }.to output(/91.87 EUR/).to_stdout
-        end
-      end
-
       context "when the converted amount has fractional cents" do
-        let(:rate) { 91.86598 }
+        let(:converted) { 91.86598 }
 
         it "rounds the converted amount to the nearest cent" do
           expect { run_cli }.to output(/91.87 EUR/).to_stdout
@@ -65,7 +57,7 @@ module Currencyfx
       end
 
       context "when converted amount has no fractional amount" do
-        let(:rate) { 91 }
+        let(:converted) { 91 }
 
         it "still displays two decimal places" do
           expect { run_cli }.to output(/91.00 EUR/).to_stdout
